@@ -1,0 +1,11 @@
+- content_for :head do
+  :javascript
+    function resizeIframe(height){
+      // "+60" is a general rule of thumb to allow for differences in
+      // IE & and FF height reporting, can be adjusted as required
+      document.getElementById('local-iframe').height = parseInt(height)+60;
+      document.getElementById('local-iframe').width = '100%';
+    }
+
+- content_for :body do
+  %iframe{id:'local-iframe', width:'1', height:'1', frameborder:'0', src:'http://www.foundry.es/job_board/ac76820b-94a2-4d61-b33e-ec393275faf0?site_url='}
